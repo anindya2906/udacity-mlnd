@@ -13674,8 +13674,8 @@ Sc8YY0zQsKRnjDEmaFjSM8YYEzQs6RljjAkalvSMMcYEjf8HedbAJnRa19cAAAAASUVORK5CYII=
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> When the max depth is 1, the model is suffering from <code>high bias</code> and when the max dept is 10 then the model is having <code>high variance</code>. 
-From the graph we can see that when max dept is 1 then the validation score is very near to training score, but overall, it is very low (around 40%). So we can say that the model has high bias. Again when the max depth is 10 then the training score is very high (almost 100%) but the validation score is comparatively low, which implies the model is overfitted with training data, hence we can say that the model is having high variance.</p>
+<p><strong>Answer: </strong> When the max depth is 1, the model is suffering from <code>high bias</code> and when the max dept is 10 then the model is having <code>high variance</code>.<br>
+From the graph we can see that when max dept is 1 then the training score is very low which indicated either high bias or high variance, but since the validation score is very near to the training score, we can say that the model has high bias. Again when the max depth is 10 then the training score is very high (almost 100%) but the validation score is comparatively low, which implies the model is overfitted with training data, hence we can say that the model is having high variance.</p>
 
 </div>
 </div>
@@ -13726,7 +13726,7 @@ From the graph we can see that when max dept is 1 then the validation score is v
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> Grid search is a technique to find the optimal values for the parameters of an algorithm. With this technique we can pass a collection of parameters and its possible values for the algorithm being used. Grid Search will automatically run several instances of the algorithm with different combinations of the parameters specified, and will calculate accuracy. in the end it will return a model with the best possible combination of the parameter values which gives an optimal accuracy.</p>
+<p><strong>Answer: </strong> Grid search is a technique to find the optimal values for the parameters of an algorithm. With this technique we can pass a collection of parameters and its possible values for the algorithm being used. Grid Search will exhaustively generate different combinations of parameter values for all of the parameters specified, and will run different instances of the algorithm with each combination of parameter values generated. in the end it will return a model with the best possible combination of the parameter values which gives an optimal accuracy.</p>
 
 </div>
 </div>
@@ -13747,8 +13747,8 @@ From the graph we can see that when max dept is 1 then the validation score is v
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong> in K-fold cross-validation technique, the training data is divide into K number of smaller sets called (fold), then the algothm is applied on K-1 numbers of sets, and an accuracy is calculated on the Kth set. This is repeaded in a loop, and an average accuracy is returned. This way we can minimize the chance of overfitting or underfitting.
-In GridSearch while trying to find out the best possible values for the parameters of an algorithm there is a greater chance to overfit the model with the training data. This will result in high accuracy for the training data but will fail to predict anthing usefull for the test data or any unseen data. To avoid this we can use the K-fold cross-validation technique in GridSearch. This way we can parallelly cross validate the model while tuning the parametrs.</p>
+<p><strong>Answer: </strong> in K-fold cross-validation technique, the training data is divide into K number of smaller sets called fold, then the algothm is applied on K-1 numbers of sets, and an accuracy is calculated on the Kth set. This is repeaded in a loop, and an average accuracy is returned. This way we can minimize the chance of overfitting or underfitting.
+In GridSearch while trying to find out the best possible values for the parameters of an algorithm there is a greater chance to overfit the model. For example, if we are using simple train/test split method for optimizing parameters, the grid search will optimize the parameters which gives best result with the heldout test data. But this model might not give good result for any unseen real world data. To avoid this we can use the K-fold cross-validation technique in GridSearch. We apply K-fold cross-validation on the training data to optimize the paramaters and then we test the model on the test data which in this case is totally unseen to the model. This way we can decrease the chance of overfitting our model.</p>
 
 </div>
 </div>
